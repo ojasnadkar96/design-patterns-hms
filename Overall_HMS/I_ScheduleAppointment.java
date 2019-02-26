@@ -1,25 +1,27 @@
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class I_ScheduleAppointment implements Interface{
 	
-	private static List<Date> listOfTimeslots = new ArrayList<Date>();
+	private static List<String> listOfTimeslots = new ArrayList<String>();
 	private static int tokenNumber;
 	private C_ScheduleAppointment controllerInstance = C_ScheduleAppointment.getInstance();
 	
 	public void requestDoctor(String doctorName){
 		listOfTimeslots = controllerInstance.requestDoctor(doctorName);
-		display(listOfTimeslots.toString());
+		display("Please select from  available timeslots:");
+		for(int i=0; i<listOfTimeslots.size(); i++){
+			display(i+1 + ": " + listOfTimeslots.get(i));
+		}
 	}
 	
-	public void requestAppointment(Date timeslot){
+	public void requestAppointment(int timeslot){
 		tokenNumber = controllerInstance.requestAppointment(timeslot);
-		display(Integer.toString(tokenNumber));
+		display("Token Number: " + Integer.toString(tokenNumber));
 	}
 	
-	public void sendPatientDetails(String patientDetails){
-		controllerInstance.sendPatientDetails(patientDetails);
+	public String sendPatientDetails(String patientDetails){
+		return controllerInstance.sendPatientDetails(patientDetails);
 	}
 	
 	public void display(String str){

@@ -5,6 +5,7 @@ public class E_Patient {
 	
 	private static E_Patient instance = new E_Patient();
 	private List<Patient> patients = new ArrayList<Patient>();
+	public int pid = 0;
 	
 	private E_Patient(){}
 	
@@ -18,20 +19,24 @@ public class E_Patient {
 				return patient.getHistory();
 			}
 		}
-		return "";
+		return "Patient ID not found";
 	}
 	
-	String updatePatientHistory(String patientID, String whatever){
+	String updatePatientHistory(String patientID, String history){
 		for(Patient patient : patients){
 			if(patient.getPatientID().equals(patientID)){
-				patient.setHistory(whatever + "\n");
+				patient.setHistory(history + "\n");
+				System.out.println();
 				return patient.getHistory();
 			}
 		}
-		return "";
+		return "Patient ID not found";
 	}
 	
-	public void sendPatientDetails(String patientDetails){
-		patients.add(new OutPatient("Vivek", "wfkwnejfw"));
+	public String sendPatientDetails(String patientDetails){
+		this.pid++;
+		patients.add(new OutPatient("Patient Details", Integer.toString(this.pid)));
+		System.out.println(Integer.toString(this.pid));
+		return Integer.toString(this.pid);
 	}
 }

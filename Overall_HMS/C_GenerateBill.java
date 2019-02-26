@@ -1,4 +1,3 @@
-
 public class C_GenerateBill {
 	public String patientHistory;
 	private static C_GenerateBill generator = new C_GenerateBill();
@@ -23,7 +22,7 @@ public class C_GenerateBill {
 	    }
 	    
 	    Bill bill = new Bill();
-	    bill.setBillAmount(lines * 200.0);		//$200 per amenity
+	    bill.setBillAmount((lines * 100.0)-100.0);		//$100 per amenity
 	    return bill;
 	}
 }

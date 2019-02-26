@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Calendar;
 
 public class E_Appointment {
 	
@@ -13,37 +11,24 @@ public class E_Appointment {
 		return instance;
 	}
 	
-	public List<Date> requestDoctor(String doctorName){
-		
-		List<Date> listOfTimeslots = new ArrayList<Date>();
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.YEAR, 2017);
-		cal.add(Calendar.MONTH, Calendar.MARCH);
-		
-		if(doctorName == "Dr. A"){
-			cal.add(Calendar.DAY_OF_MONTH, 6);
-			Date dateRep = cal.getTime();
-			listOfTimeslots.add(dateRep);
-			
-			cal.add(Calendar.DAY_OF_MONTH, 7);
-			dateRep = cal.getTime();
-			listOfTimeslots.add(dateRep);
+	public List<String> requestDoctor(String doctorName){
+    	List<String> listOfTimeslots = new ArrayList<String>();
+		if(doctorName.equals("A") || doctorName.equals("a")){
+          	listOfTimeslots.add("Monday 09:00 - 09:30 am");
+          	listOfTimeslots.add("Monday 09:30 - 10:00 am");
 		}
-		else if(doctorName == "Dr. B"){
-			cal.add(Calendar.DAY_OF_MONTH, 8);
-			Date dateRep = cal.getTime();
-			listOfTimeslots.add(dateRep);
-			
-			cal.add(Calendar.DAY_OF_MONTH, 9);
-			dateRep = cal.getTime();
-			listOfTimeslots.add(dateRep);
+		else if(doctorName.equals("B") || doctorName.equals("b")){
+          	listOfTimeslots.add("Tuesday 09:00 - 09:30 am");
+          	listOfTimeslots.add("Tuesday 09:30 - 10:00 am");
 		}
-		
+		else if(doctorName.equals("C") || doctorName.equals("c")){
+          	listOfTimeslots.add("Wednesday 09:00 - 09:30 am");
+          	listOfTimeslots.add("Wednesday 09:30 - 10:00 am");
+		}
 		return listOfTimeslots;
-		
 	}
 
-	public int bookAppointment(Date timeslot) {
+	public int bookAppointment(int timeslot) {
 		int token = 1;
 		return token;
 	}

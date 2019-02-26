@@ -1,4 +1,3 @@
-
 public class Bill {
 	public double billAmount;
 	

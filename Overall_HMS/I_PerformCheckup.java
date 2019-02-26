@@ -1,4 +1,3 @@
-
 public class I_PerformCheckup implements Interface{
 	
 	public String patientHistory;

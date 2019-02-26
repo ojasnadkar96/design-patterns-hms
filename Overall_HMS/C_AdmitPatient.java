@@ -1,4 +1,3 @@
-
 public class C_AdmitPatient {
 	
 	private static int[] listOfVacantRooms = new int[100];

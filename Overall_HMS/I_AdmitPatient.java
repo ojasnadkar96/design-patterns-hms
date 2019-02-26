@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class I_AdmitPatient implements Interface{
 	
-	private static int[] listOfVacantRooms = new int[100];
+	private static int[] listOfVacantRooms = new int[100]; //100 vacant rooms
 	private static boolean approval;
 	private static C_AdmitPatient controllerInstance = C_AdmitPatient.getInstance();
 	

@@ -1,7 +1,6 @@
-
 public class C_PerformTest {
 	
-	public String updatedPatientHistory;
+	public String patientHistory;
 	private static C_PerformTest performer = new C_PerformTest();
 	
 	private C_PerformTest(){}
@@ -12,8 +11,8 @@ public class C_PerformTest {
 	
 	String updatePatientHistory(String patientID, String test){
 		E_Patient patientInstance = E_Patient.getInstance();
-		patientInstance.updatePatientHistory(patientID, test);
-		return updatedPatientHistory;
+		patientHistory = patientInstance.updatePatientHistory(patientID, test);
+		return patientHistory;
 	}
 	
 }

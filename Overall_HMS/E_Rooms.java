@@ -20,7 +20,7 @@ public class E_Rooms {
 
 	public boolean assignRoom(String patientID, int room) {
 		E_Patient instance = E_Patient.getInstance();
-		instance.updatePatientHistory(patientID, Integer.toString(room));
+		instance.updatePatientHistory(patientID,"Room no.: " + Integer.toString(room));
 		return true;
 	}
 	
