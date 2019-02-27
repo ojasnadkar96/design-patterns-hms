@@ -9,7 +9,7 @@ public class HospitalManagement implements Interface{
 		I_PerformTest test = new I_PerformTest();
 		I_ScheduleAppointment appointment = new I_ScheduleAppointment();
 		HospitalManagement hms = new HospitalManagement();
-		int choice = 0;
+		public int choice = 0;
 		Scanner sc = new Scanner(System.in);
 		do{
 			System.out.println();
